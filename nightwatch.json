@@ -1,0 +1,72 @@
+{
+    "src_folders": [
+        "test"
+    ],
+    "output_folder": "tests_output",
+    "custom_commands_path": "helpers/custom-commands",
+    "custom_assertions_path": "",
+    "page_objects_path": "",
+    "globals_path": "",
+    "test_workers": {
+        "enabled": false,
+        "workers": 3
+    },
+    "selenium": {
+        "start_process": true,
+        "server_path": "node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-3.13.0.jar",
+        "log_path": "",
+        "host": "127.0.0.1",
+        "port": 4444,
+        "cli_args": {
+            "webdriver.chrome.driver": "node_modules/chromedriver/lib/chromedriver/chromedriver.exe",
+            "webdriver.ie.driver": ""
+        }
+    },
+    "test_settings": {
+        "default": {
+            "skip_testcases_on_fail": false,
+            "launch_url": "http://localhost",
+            "selenium_port": 4444,
+            "selenium_host": "127.0.0.1",
+            "silent": true,
+            "screenshots": {
+                "enabled": true,
+                "path": "screenshots"
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome",
+                "javascriptEnabled": false,
+                "acceptSslCerts": false,
+                "chromeOptions": {
+                    "args": [
+                        "--headless-none"
+                    ]
+                }
+            }
+        },
+        "firefox": {
+            "desiredCapabilities": {
+                "browserName": "firefox",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true,
+                "cli_args": {
+                    "globals": {
+                        "env": "firefox"
+                    }
+                }
+            }
+        },
+        "ie": {
+            "desiredCapabilities": {
+                "browserName": "internet explorer",
+                "javascriptEnabled": true,
+                "acceptSslCerts": true,
+                "cli_args": {
+                    "globals": {
+                        "env": "ie"
+                    }
+                }
+            }
+        }
+    }
+}
