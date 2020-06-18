@@ -56,6 +56,7 @@ module.exports = {
             confirmPasswordLocator: "#loginradius-changepassword-confirmnewpassword",
             changePasswordButtonLocator: "#loginradius-submit-submit",
         },
+        logoutBtn: "#lr-showifjsenabled > div.grid.lr-hostr-container.lr-hostr-logged-in > div.grid.lr-hostr-frame.cf > div.lr-profile-frame.lr-social-login-frame.lr-frames.lr-sample-background-enabled.cf > div.lr-menu.lr-account-menu > div.lr-menu-list-frame > a.lr-logout.lr-menu-list"
     },
     commonLocators: {
         notificationDiv: "#lr-raas-message",

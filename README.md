@@ -36,12 +36,13 @@ We will continuously improve automation scripts and try to deliver you the best 
 
 #### Running Tests:
 Now you are able to run scripts on your own implementated loginradius identity experience.
-- Command to run all tests at once`node nightwatch.js test`
-- Command to run a single file`node nightwatch.js test\<filename>.js`
+- Command to run all tests at once `node nightwatch.js test`
+- Command to run a single file `node nightwatch.js test\<filename>.js`
+- If you have installed Nightwatch globally (with -g option), the binary nightwatch will be available anywhere and test can be run by directly using nightwatch as a test runner `nightwatch test\<filename.js>`
 
 > *Nightwatch includes a command-line test runner which makes it easy to run tests and generate useful output. Please refer to the [Installation](https://nightwatchjs.org/guide/running-tests/) section for details on how to get the runner installed. There are a few different options on how to use the test runner, depending on your installation type.*
 #### Configure in Headless Mode:
-Search for `--headless-none` in `nightwatch.json` and replace it by `headless`like below code:
+Search for `--headless-none` in `nightwatch.json` and replace it by `headless` like below code:
 ````
 "chromeOptions": {
 	"args": [
@@ -61,10 +62,10 @@ Currently, Test Cases are scripted to run with only ***Required Email Verificati
 
 ##### html-reporting:
 - Create a folder`html-reports`at project root.
-- You can use interactive html-report also simply by running `node nightwatch.js --reporter html-reporter.js test`command.
+- You can use interactive html-report also simply by running `node nightwatch.js --reporter html-reporter.js test` command.
 - html report will be saved as `html-reports\siteName-datetime.html`
 - Generated html report will looks like:
 
 > *If you'd like to define your own reporter in addition to the built-in ones, you can follow the detailed guide [here](https://nightwatchjs.org/guide/extending-nightwatch/#custom-reporter)*
 
-Feel free to log issues, PR also welcome.
+Feel free to log issues. PR also welcome, read the contribution guideline [here](CONTRIBUTING.md)
