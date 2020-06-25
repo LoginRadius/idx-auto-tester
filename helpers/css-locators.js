@@ -24,6 +24,7 @@ module.exports = {
         register: {
             submit: "#loginradius-submit-register",
             gender: "#loginradius-registration-gender",
+            confirmPassword: '#loginradius-registration-confirmpassword',
             emailValidation: "#validation-loginradius-registration-emailid",
             passwordValidation: "#validation-loginradius-registration-password",
             confirmpasswordValidation: "#validation-loginradius-registration-confirmpassword",

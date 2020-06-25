@@ -15,7 +15,64 @@ let emailId;
 module.exports = {
     '@tags': ['registration', 'userregistration'],
 
-    '\n1. User should able to register': function (browser, done) {
+
+    '\n1. Verify that user should navigate to register page': function (browser, done) {
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginSubmit, 20000, false);
+        browser.click(elements.authPage.login.registerLink);
+        browser.pause(5000);
+        browser.waitForElementVisible(elements.authPage.register.submit, 10000, false);
+        browser.end(done);
+    },
+
+
+    '\n2. Verify that user should receive error message on minimum password length': function (browser, done) {
+
+        let emailId = chance.word({
+            length: 10
+        });
+        let password = chance.word({
+            length: 4
+        });
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginSubmit, 20000, false);
+        browser.click(elements.authPage.login.registerLink);
+        browser.pause(5000);
+        browser.fillRegistrationForm(emailId, password);
+        browser.click(elements.authPage.register.submit);
+        browser.waitForElementVisible(elements.authPage.register.passwordValidation, 10000, false);
+        browser.expect.element(elements.authPage.register.passwordValidation).text.to.contain(message.passwordlength);
+        browser.end(done);
+    },
+
+
+    '\n3. Verify that user should unable to register with mismatch password': function (browser, done) {
+
+        let emailId = chance.word({
+            length: 10
+        });
+        let password = chance.word({
+            length: 8
+        });
+        let confirmPassword = chance.word({
+            length: 8
+        });
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginSubmit, 20000, false);
+        browser.click(elements.authPage.login.registerLink);
+        browser.pause(5000);
+        browser.fillRegistrationForm(emailId, password);
+        browser.setValue(elements.authPage.register.confirmPassword, confirmPassword);
+        browser.click(elements.authPage.register.submit);
+        browser.waitForElementVisible(elements.authPage.register.confirmpasswordValidation, 10000, false);
+        browser.expect.element(elements.authPage.register.confirmpasswordValidation).text.to.contain(message.confirmPasswordMismatch);
+        browser.end(done);
+    },
+
+    '\n4. Verify that User should able to register': function (browser, done) {
 
         let email = chance.email({
             domain: "mail7.io",
@@ -43,7 +100,7 @@ module.exports = {
     },
 
 
-    '\n2. User should able to verify the email': function (browser, done) {
+    '\n5. Verify that user should able to verify the email': function (browser, done) {
         if (registrationSuccess) {
             browser.getVerificationToken(emailId, function (res) {
                 browser.url(uri.iefAuthPageUri + "?vtype=emailverification&vtoken=" + res.vtoken);
@@ -56,7 +113,7 @@ module.exports = {
         browser.end(done);
     },
 
-    '\n3. User should unable to register with already registered emailId': function (browser, done) {
+    '\n6. Verify that user should unable to register with already registered emailId': function (browser, done) {
 
         if (registrationSuccess) {
             let password = chance.word({
@@ -76,7 +133,7 @@ module.exports = {
         }
     },
 
-    '\n4. User should unable to register with invalid emailId': function (browser, done) {
+    '\n7. Verify that user should unable to register with invalid emailId': function (browser, done) {
 
         let emailId = chance.word({
             length: 10
@@ -96,7 +153,7 @@ module.exports = {
         browser.end(done);
     },
 
-    '\n5. User should unable to register with blank data': function (browser, done) {
+    '\n8. Verify that user should unable to register with blank data': function (browser, done) {
         browser.url(uri.iefAuthPageUri);
         browser.waitForElementVisible(elements.authPage.login.loginSubmit, 20000);
         browser.click(elements.authPage.login.registerLink);

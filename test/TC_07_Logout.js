@@ -11,7 +11,7 @@ module.exports = {
     '@tags': ['logout'],
 
 
-    '\n1. User should be able to login': function (browser, done) {
+    '\n1. Verify that user should able to login': function (browser, done) {
 
         let body = samplePayload();
 
@@ -19,7 +19,7 @@ module.exports = {
             browser.url(uri.iefAuthPageUri);
             browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
             browser.userLogin(response.Email[0].Value, body.Password);
-            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should be able to login, profile-img should locate");
+            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should able to login, profile-img should locate");
             browser.assert.urlEquals(uri.iefProfilePageUri);
             browser.waitForElementVisible(elements.profilePage.accountmenu, 10000);
             browser.pause(1000);

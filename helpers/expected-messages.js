@@ -20,5 +20,7 @@ module.exports = {
     "verificationTokenMissing": "Verification token not found in query string.",
     "invalidVerificationLink": "Invalid email verification link",
     "invalidOldPassword": "Your current password is invalid, please use the correct password.",
+    "passwordlength" : "The Password field must be at least",
+    "confirmPasswordMismatch" : "The Confirm Password field does not match the Password field.",
 
 };

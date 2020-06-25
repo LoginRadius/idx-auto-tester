@@ -15,7 +15,7 @@ let chance = new Chance();
 module.exports = {
     '@tags': ['profileeditor'],
 
-    '\n1. User should able to update the profile successfully.': function (browser, done) {
+    '\n1. Verify that user should able to update the profile successfully.': function (browser, done) {
 
         let body = samplePayload();
         let firstname = chance.word({
@@ -30,7 +30,7 @@ module.exports = {
             browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
             browser.maximizeWindow();
             browser.userLogin(response.Email[0].Value, body.Password);
-            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should be able to login, profile-img should locate");
+            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should able to login, profile-img should locate");
             browser.assert.urlEquals(uri.iefProfilePageUri);
             browser.fillProfileEditorForm(firstname, lastname);
             browser.pause(1000);

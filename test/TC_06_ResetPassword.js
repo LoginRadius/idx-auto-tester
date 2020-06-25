@@ -41,7 +41,7 @@ module.exports = {
                     });
                 }
                 browser.userLogin(response.Email[0].Value, Reset_Password);
-                browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should be able to login, profile-img should locate");
+                browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should able to login, profile-img should locate");
                 browser.assert.urlEquals(uri.iefProfilePageUri);
                 browser.logout();
             });
