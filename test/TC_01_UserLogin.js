@@ -14,7 +14,7 @@ module.exports = {
     '@tags': ['login', 'userlogin'],
 
 
-    '\n1. Verify that user should able to login': function (browser, done) {
+    '1. Verify that user should able to login': function (browser, done) {
 
         let body = samplePayload();
 
@@ -28,7 +28,7 @@ module.exports = {
         });
     },
 
-    '\n2. Verify that user should unable to login when provide invalid email and password combination': function (browser, done) {
+    '2. Verify that user should unable to login when provide invalid email and password combination': function (browser, done) {
 
         let email = chance.email({ length: 10 });
         let pass = chance.word({ length: 10 })
@@ -43,7 +43,7 @@ module.exports = {
         });
     },
 
-    '\n3. Verift that proper message should show when pass valid email and Invalid Password': function (browser, done) {
+    '3. Verify that proper message should show when pass valid email and Invalid Password': function (browser, done) {
 
         let body = samplePayload();
         let pass = chance.word({ length: 10 })
@@ -60,8 +60,38 @@ module.exports = {
         });
     },
 
+    "4. Verift that it should show proper errormessage when login by unverified user's email": function (browser, done) {
+
+        let body = samplePayload({
+            "EmailVerified": false
+        });
+
+        browser.createUser(body, function (response) {
+            browser.url(uri.iefAuthPageUri);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+            browser.userLogin(response.Email[0].Value, body.Password);
+            browser.pause(4000);
+            browser.getText(elements.commonLocators.notificationDiv, function (result) {
+                this.assert.equal(result.value, message.unverifiedUserLoginMessage);
+                browser.assert.urlEquals(uri.iefAuthPageUri);
+            });
+        });
+    },
+
+    "5. Verify that it should validation message when pass email in invalid format": function (browser, done) {
+
+        let invalidFormattedEmail = chance.word({ length: 10 });
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+        browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
+        browser.pause(2000);
+        browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
+            this.assert.equal(result.value, message.invalidemailIdValidationMsg);
+            browser.assert.urlEquals(uri.iefAuthPageUri);
+        });
+    },
+
     after: function (browser, done) {
         browser.end(done);
     }
 }
-

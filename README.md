@@ -6,6 +6,9 @@ Idx-Auto-Tester is LoginRadius Identify Experience Automation Framework which re
  - [Node.js](https://nodejs.org) Core Assertion Testing Library is
    used for assertions
 
+### Release Roadmap:
+The full-version releases that includes more test coverage and major changes with several improvements & code optimizations will be coming up in the multiple scheduled major releases. The details can be found [here](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
+
 ## Getting Started:
 The Standard Authentication functionality which is available with loginradius identity experience framework can be tested via using these automated scripts. By running all the scripts, you can ensure your implementation.
 We will continuously improve automation scripts and try to deliver you the best with adding more test cases, when any new functionality will be introduced in loginradius identity experience.

@@ -22,5 +22,6 @@ module.exports = {
     "invalidOldPassword": "Your current password is invalid, please use the correct password.",
     "passwordlength" : "The Password field must be at least",
     "confirmPasswordMismatch" : "The Confirm Password field does not match the Password field.",
+    "unverifiedUserLoginMessage" : "This email has not yet been verified, please click the link in your email to confirm your email address."
 
 };
