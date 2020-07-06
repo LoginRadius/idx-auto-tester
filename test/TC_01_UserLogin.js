@@ -60,7 +60,7 @@ module.exports = {
         });
     },
 
-    "4. Verift that it should show proper errormessage when login by unverified user's email": function (browser, done) {
+    "4. Verify that it should show proper errormessage when login by unverified user's email": function (browser, done) {
 
         let body = samplePayload({
             "EmailVerified": false
