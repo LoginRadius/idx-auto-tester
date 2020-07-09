@@ -86,7 +86,7 @@ module.exports = {
         browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
         browser.pause(2000);
         browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
-            this.assert.equal(result.value, message.invalidemailIdValidationMsg);
+            this.assert.equal(result.value, message.invalidemailIdValidationMessage);
             browser.assert.urlEquals(uri.iefAuthPageUri);
         });
     },

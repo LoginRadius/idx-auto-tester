@@ -47,7 +47,9 @@ module.exports = {
         editProfileLocator: "div.lr-menu-list-frame > a:nth-child(1)",
         firstNameLocator: "#loginradius-profileeditor-firstname",
         lastNameLocator: "#loginradius-profileeditor-lastname",
+        lastNameProfileLocator: "#profile-viewer > div",
         updateProfileButtonLocator: "#loginradius-submit-update-profile",
+        closeProfileEditorLocator: "#lr-close",
         changePassword: {
             changePasswordMenuLocator: ".lr-menu-button",
             changePasswordLinkLocator: "#lr-showifjsenabled > div.grid.lr-hostr-container.lr-hostr-logged-in > div.grid.lr-hostr-frame.cf > div.lr-profile-frame.lr-social-login-frame.lr-frames.lr-sample-background-enabled.cf > div.lr-menu.lr-account-menu > div.lr-menu-list-frame > a:nth-child(2)",
@@ -56,6 +58,9 @@ module.exports = {
             newPasswordLocator: "#loginradius-changepassword-newpassword",
             confirmPasswordLocator: "#loginradius-changepassword-confirmnewpassword",
             changePasswordButtonLocator: "#loginradius-submit-submit",
+            oldPasswordValidationLocator: "#validation-loginradius-changepassword-oldpassword",
+            newPasswordValidationLocator: "#validation-loginradius-changepassword-newpassword",
+            confirmPasswordValidationLocator: "#validation-loginradius-changepassword-confirmnewpassword",
         },
         logoutBtn: "#lr-showifjsenabled > div.grid.lr-hostr-container.lr-hostr-logged-in > div.grid.lr-hostr-frame.cf > div.lr-profile-frame.lr-social-login-frame.lr-frames.lr-sample-background-enabled.cf > div.lr-menu.lr-account-menu > div.lr-menu-list-frame > a.lr-logout.lr-menu-list"
     },

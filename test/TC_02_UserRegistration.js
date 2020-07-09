@@ -149,7 +149,7 @@ module.exports = {
         browser.fillRegistrationForm(emailId, password);
         browser.click(elements.authPage.register.submit);
         browser.waitForElementVisible(elements.authPage.register.emailValidation, 10000, false);
-        browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMsg);
+        browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMessage);
         browser.end(done);
     },
 
@@ -160,9 +160,9 @@ module.exports = {
         browser.pause(5000);
         browser.click(elements.authPage.register.submit);
         browser.waitForElementVisible(elements.authPage.register.emailValidation, 10000);
-        browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMsg);
-        browser.expect.element(elements.authPage.register.passwordValidation).text.to.contain(message.passwordValationMsg);
-        browser.expect.element(elements.authPage.register.confirmpasswordValidation).text.to.contain(message.confirmpasswordValidationMsg);
+        browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMessage);
+        browser.expect.element(elements.authPage.register.passwordValidation).text.to.contain(message.passwordValationMessage);
+        browser.expect.element(elements.authPage.register.confirmpasswordValidation).text.to.contain(message.confirmpasswordValidationMessage);
         browser.end(done);
     }
 }
