@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.5
+- Added New Test Cases `Logout` functionality
+
 ## 1.0.4
 - Added New Test Cases `Change Password` functionality
 - Added New Test Cases `Profile Editor` functionality

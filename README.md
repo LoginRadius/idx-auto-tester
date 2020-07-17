@@ -1,13 +1,17 @@
+
 # LoginRadius 'Idx-Auto-Tester' Open Source Automation
 
 ## About:
 Idx-Auto-Tester is LoginRadius identity Experience Automation Framework which refers to IEF Automation, is an open-source automation framework built-in Nightwatch| Node.js tool with delivering all the standard authentication cases of LoginRadius Identity Experience.
  - Script is written in [Nightwatch](https://nightwatchjs.org/) framework 
- - [Node.js](https://nodejs.org) Core Assertion Testing Library is
-   used for assertions
+ - [Node.js](https://nodejs.org) Core Assertion Testing Library is used for assertions
 
 ### Release Roadmap:
 The full-version releases that includes more test coverage and major changes with several improvements & code optimizations will be coming up in the multiple scheduled major releases. The details can be found [here](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
+
+### Changelog:
+- All notable changes can be found [here](CHANGELOG.md)
+
 
 ## Getting Started:
 The Standard Authentication functionality which is available with loginradius identity experience framework can be tested via using these automated scripts. By running all the scripts, you can ensure your implementation.
@@ -66,11 +70,10 @@ Currently, Test Cases are scripted to run with only ***Required Email Verificati
  - By default tests will generate a JUnit formatted xml report for each
    test file in the `tests_output` folder at the root of the project.
 
-##### html-reporting:
+##### HTML Reporting:
 - Create a folder`html-reports`at project root.
 - You can use interactive html-report also simply by running `node nightwatch.js --reporter html-reporter.js test` command.
 - html report will be saved as `html-reports\siteName-datetime.html`
-- Generated html report will looks like:
 
 > *If you'd like to define your own reporter in addition to the built-in ones, you can follow the detailed guide [here](https://nightwatchjs.org/guide/extending-nightwatch/#custom-reporter)*
 
