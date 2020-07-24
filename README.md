@@ -1,4 +1,4 @@
-
+﻿
 # LoginRadius 'Idx-Auto-Tester' Open Source Automation
 
 ## About:
@@ -7,7 +7,7 @@ Idx-Auto-Tester is LoginRadius identity Experience Automation Framework which re
  - [Node.js](https://nodejs.org) Core Assertion Testing Library is used for assertions
 
 ### Release Roadmap:
-The full-version releases that includes more test coverage and major changes with several improvements & code optimizations will be coming up in the multiple scheduled major releases. The details can be found [here](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
+The full-version releases that include more test coverage and major changes with several improvements & code optimizations will be coming up in the multiple scheduled major releases. The details can be found [here](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
 
 ### Changelog:
 - All notable changes can be found [here](CHANGELOG.md)
@@ -35,7 +35,9 @@ The process of implementation or creation automation framework is defined [here]
 ├── nightwatch.js
 └── nightwatch.json  
 ```
+![](https://lh3.googleusercontent.com/Wmi5FVepKIvITCI-ynwBjL8qBbtv0rrA1OfeMTpyPsO-_RhovEv7zVPbdAXEHHuGVYLnKMSyZmrkWv2fjbEM0SggmhO_ptEmL2XJLjPZ8NMf1gHJYZI12teQY4fc291B3M7f2rMS)
 - Add your apiKey, apiSecret, and siteName in `config\config.js`
+
 
 > Don't have Loginradius App ?. Create your own [here](https://adminconsole.loginradius.com/)
 - Add mail7 apiKey and apiSecret for disposable email addresses
@@ -69,12 +71,13 @@ Currently, Test Cases are scripted to run with only ***Required Email Verificati
 
  - By default tests will generate a JUnit formatted xml report for each
    test file in the `tests_output` folder at the root of the project.
+**![](https://lh5.googleusercontent.com/8N5dtdTlF1-5akxJYvyl6LoOzQaAORnkjQX2DTH3rOXOgB7fDm1L99WEyjvBTUMltzN9T2gU6Z2xdgKOJ6XpNSeaJ9dxaMyF7oaNCKilDulm5RkL8o_SSf24am-ZvwjxNTLVHYIc)**
 
 ##### HTML Reporting:
 - Create a folder`html-reports`at project root.
 - You can use interactive html-report also simply by running `node nightwatch.js --reporter html-reporter.js test` command.
 - html report will be saved as `html-reports\siteName-datetime.html`
-
+**![](https://lh3.googleusercontent.com/Gc_RQrBUslcYhjZDqlyme4Y7DjEJN02Uun2a9HnPDZyuJDWfYeRhshXueIhj4HHmdrG8NwvldU-DzqaKUYibQ-L9Jp7cX6tVXwkTaYUlW06FPtUgRJ9ug4v13HhS037EVdNTT7aJ)**
 > *If you'd like to define your own reporter in addition to the built-in ones, you can follow the detailed guide [here](https://nightwatchjs.org/guide/extending-nightwatch/#custom-reporter)*
 
 Feel free to log issues. PR also welcome, read the contribution guideline [here](CONTRIBUTING.md)
