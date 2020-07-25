@@ -12,6 +12,9 @@ The full-version releases that include more test coverage and major changes with
 ### Changelog:
 - All notable changes can be found [here](CHANGELOG.md)
 
+### Contribution:
+The project open for contribute on community, read the contribution guidelines [here](CONTRIBUTING.md)
+
 
 ## Getting Started:
 The Standard Authentication functionality which is available with loginradius identity experience framework can be tested via using these automated scripts. By running all the scripts, you can ensure your implementation.
@@ -86,4 +89,4 @@ Currently, Test Cases are scripted to run with only ***Required Email Verificati
 
 > *If you'd like to define your own reporter in addition to the built-in ones, you can follow the detailed guide [here](https://nightwatchjs.org/guide/extending-nightwatch/#custom-reporter)*
 
-Feel free to log issues. PR also welcome, read the contribution guideline [here](CONTRIBUTING.md)
+Feel free to log issues. PR also welcome.
