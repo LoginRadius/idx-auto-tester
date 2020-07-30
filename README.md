@@ -59,6 +59,21 @@ Now you are able to run scripts on your own implementated loginradius identity e
 
 > *Nightwatch includes a command-line test runner which makes it easy to run tests and generate useful output. Please refer to the [Installation](https://nightwatchjs.org/guide/running-tests/) section for details on how to get the runner installed. There are a few different options on how to use the test runner, depending on your installation type.*
 
+##### Parallel Running:
+The Test Case can also be run in parallel, as the test files will triggred at once. Each test file will fill a test worker slot. Individual tests/steps in a test file will not run concurrently.
+- Open `nightwatch.json` file and look for below code
+````
+"test_workers": {
+	"enabled": false
+	"workers": 3
+}
+````
+- The `workers` option configures how many child processes can run concurrently.
+- "auto" - determined by number of CPUs e.g. 4 CPUs means 4 workers
+- {number} - specifies an exact number of workers
+
+The more details on parallel run can be found [here](https://nightwatchjs.org/guide/running-tests)
+
 #### Configure in Headless Mode:
 Search for `--headless-none` in `nightwatch.json` and replace it by `headless` like below code:
 ````
