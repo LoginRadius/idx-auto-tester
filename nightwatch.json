@@ -9,7 +9,7 @@
     "globals_path": "",
     "test_workers": {
         "enabled": false,
-        "workers": 3
+        "workers": "auto"
     },
     "selenium": {
         "start_process": true,
