@@ -56,6 +56,7 @@ Now you are able to run scripts on your own implementated loginradius identity e
 - Command to run all tests at once `node nightwatch.js test`
 - Command to run a single file `node nightwatch.js test\<filename>.js`
 - If you have installed Nightwatch globally (with -g option), the binary nightwatch will be available anywhere and test can be run by directly using nightwatch as a test runner `nightwatch test\<filename.js>`
+- Test Executable Batch file is also added with named as `Executable.bat` which can be run with double-click, and written command will be executed and html output report will be generated 
 
 > *Nightwatch includes a command-line test runner which makes it easy to run tests and generate useful output. Please refer to the [Installation](https://nightwatchjs.org/guide/running-tests/) section for details on how to get the runner installed. There are a few different options on how to use the test runner, depending on your installation type.*
 

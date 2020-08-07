@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.8 
+- Added `executable.bat` batch file   
+
 ## 1.0.7
 - Added Parallel Running options in `README.md`
 
