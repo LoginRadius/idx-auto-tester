@@ -7,13 +7,9 @@ var request = require('request'),
 module.exports = function (e, cb) {
 
     /**
-     * @param {String} key: mail7 key
+     * @param {String} e: email in form of email(zyx@mail7.io or zyx), you want get data from...
      *
-     * @param {String} key: mail7 secret
-     *
-     * @param {String} email: email(zyx@mail7.io or zyx), you want get data from...
-     *
-     * @param {function} callback: a callback function to handle response
+     * @param {function} cb: callback function to handle response
      */
 
     let domain = e.substr(e.indexOf('@'))

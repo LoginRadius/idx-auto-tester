@@ -7,6 +7,11 @@ let elements = require(router.locators);
 
 exports.command = function (oldPassword, newPassword) {
 
+    /**
+     * @param {string} oldPassword - current password as string
+     * @param {string} newPassword - new password as string
+     */
+
     this.waitForElementVisible(elements.profilePage.accountmenu, 10000);
     this.pause(1000);
     this.click(elements.profilePage.accountmenu);

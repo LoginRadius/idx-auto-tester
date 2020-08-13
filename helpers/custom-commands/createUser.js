@@ -7,6 +7,12 @@ var lrv2 = require('loginradius-sdk')(config);
 
 
 exports.command = function (accountCreateModel, cb) {
+
+    /**
+     * @param {object} accountCreateModel - json object loaded user profile data
+     * @param {function} cb - callback function to handle response
+     */
+
     let self = this;
 
     self.perform(function (self, done) {

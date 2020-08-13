@@ -7,6 +7,10 @@ let elements = require(router.locators);
 
 exports.command = function (email) {
 
+    /**
+     * @param {string} email - the email of account for which password need to reset
+     */
+
     this.waitForElementVisible(elements.authPage.resetPassword.resetButtonLocator, 10000);
     this.click(elements.authPage.resetPassword.resetButtonLocator);
     this.pause(5000);

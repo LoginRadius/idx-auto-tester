@@ -2,9 +2,9 @@
 const _ = require('underscore');
 
 module.exports = function (objOrType) {
-    /*
-    * @Param {string} type - Values sample|required|extended
-    */
+    /** 
+     * @Param {string} objOrType - Values sample|required|extended
+     */
 
     // Default User will be a verified User
 

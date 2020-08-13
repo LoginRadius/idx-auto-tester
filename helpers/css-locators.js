@@ -1,5 +1,5 @@
 /**
- * All Element Locators stores here
+ * Css locators of ief auth.aspx and profile.aspx
  */
 
 module.exports = {
