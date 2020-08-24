@@ -6,6 +6,12 @@ let router = require('../../route.js');
 let mail7 = require(router.mail7);
 
 exports.command = function (email, cb) {
+
+    /**
+     * @param {string} email - Email of account for which vtoken need to generate.
+     * @param {string} cb - callback function to handle response
+     */
+
     var self = this;
 
     this.perform(function (self, done) {

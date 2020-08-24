@@ -6,25 +6,22 @@ Idx-Auto-Tester is LoginRadius identity Experience Automation Framework which re
  - Script is written in [Nightwatch](https://nightwatchjs.org/) framework 
  - [Node.js](https://nodejs.org) Core Assertion Testing Library is used for assertions
 
-### Release Roadmap:
+#### Release Roadmap:
 The full-version releases that include more test coverage and major changes with several improvements & code optimizations will be coming up in the multiple scheduled major releases. The details can be found [here](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
 
-### Changelog:
+#### Changelog:
 - All notable changes can be found [here](CHANGELOG.md)
 
-### Contribution:
-The project open for contribute on community, read the contribution guidelines [here](CONTRIBUTING.md)
+#### Contribution:
+The `idx-auto-tester` is open for community to contribute, read the contribution guidelines [here](CONTRIBUTING.md)
 
 
 ## Getting Started:
 The Standard Authentication functionality which is available with loginradius identity experience framework can be tested via using these automated scripts. By running all the scripts, you can ensure your implementation.
 We will continuously improve automation scripts and try to deliver you the best with adding more test cases, when any new functionality will be introduced in loginradius identity experience.
 
-#### Usage:
-- Clone this repo to your local machine
-
-#### Implementation: 
-The process of implementation or creation automation framework is defined [here](https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/). This will be helpful to the user for creating new/update testcases with different scenarios. 
+### Usage:
+- Clone this repo to your local machine 
 
 #### Configure:
 - Rename file`config\config.temp.js` by `config\config.js`
@@ -56,17 +53,17 @@ Now you are able to run scripts on your own implementated loginradius identity e
 - Command to run all tests at once `node nightwatch.js test`
 - Command to run a single file `node nightwatch.js test\<filename>.js`
 - If you have installed Nightwatch globally (with -g option), the binary nightwatch will be available anywhere and test can be run by directly using nightwatch as a test runner `nightwatch test\<filename.js>`
-- Test Executable Batch file is also added with named as `executable.bat` which can be run with double-click, and written command will be executed and html output report will be generated 
+- An executable Batch file is also added with named as `executable.bat` which can be run with double-click, and written command will be executed and html output report will be generated
 
 > *Nightwatch includes a command-line test runner which makes it easy to run tests and generate useful output. Please refer to the [Installation](https://nightwatchjs.org/guide/running-tests/) section for details on how to get the runner installed. There are a few different options on how to use the test runner, depending on your installation type.*
 
 ##### Parallel Running:
-The Test Case can also be run in parallel, as the test files will triggred at once. Each test file will fill a test worker slot. Individual tests/steps in a test file will not run concurrently.
+The Test Case can also be run in parallel, as the test files will triggered at once. Each test file will fill a test worker slot. Individual tests/steps in a test file will not run concurrently.
 - Open `nightwatch.json` file and look for below code
 ````
 "test_workers": {
-	"enabled": false
-	"workers": 3
+	"enabled": false,
+	"workers": "auto"
 }
 ````
 - The `workers` option configures how many child processes can run concurrently.
@@ -75,7 +72,7 @@ The Test Case can also be run in parallel, as the test files will triggred at on
 
 The more details on parallel run can be found [here](https://nightwatchjs.org/guide/running-tests)
 
-#### Configure in Headless Mode:
+#### Configure Headless Mode:
 Search for `--headless-none` in `nightwatch.json` and replace it by `headless` like below code:
 ````
 "chromeOptions": {
@@ -88,11 +85,13 @@ Search for `--headless-none` in `nightwatch.json` and replace it by `headless` l
 #### Limitations:
 Currently, Test Cases are scripted to run with only ***Required Email Verification Flow***
 
-#### Reporting:
+### Implementation: 
+The process of implementation or creation automation framework is defined [here](https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/). This will be helpful to the user for creating new/update testcases with different scenarios.
+
+### Reporting:
 ##### XML Reporting:
 
- - By default tests will generate a JUnit formatted xml report for each
-   test file in the `tests_output` folder at the root of the project.
+ - By default tests will generate a JUnit formatted xml report for each test file in the `tests_output` folder at the root of the project.
 
 **![](https://lh5.googleusercontent.com/8N5dtdTlF1-5akxJYvyl6LoOzQaAORnkjQX2DTH3rOXOgB7fDm1L99WEyjvBTUMltzN9T2gU6Z2xdgKOJ6XpNSeaJ9dxaMyF7oaNCKilDulm5RkL8o_SSf24am-ZvwjxNTLVHYIc)**
 
