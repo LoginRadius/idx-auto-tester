@@ -1,5 +1,5 @@
 /**
- * All app Urls store here
+ * ief web app pages 
  */
 
 module.exports = function (config) {

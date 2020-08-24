@@ -8,6 +8,10 @@ let showInReport = require(router.reportMessages);
 
 exports.command = function (resetPassword) {
 
+    /**
+     * @param {string} resetPassword - new password as string
+     */
+
     this.waitForElementVisible(elements.authPage.resetPassword.newPasswordLocator, 30000, false, showInReport.resetPasswordForm);
     this.setValue(elements.authPage.resetPassword.newPasswordLocator, resetPassword);
     this.setValue(elements.authPage.resetPassword.confirmPasswordLocator, resetPassword);

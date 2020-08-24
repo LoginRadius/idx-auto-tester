@@ -9,6 +9,12 @@ let Chance = require('chance');
 let chance = new Chance();
 
 exports.command = function (emailId, password) {
+
+    /**
+     * @param {string} emailId - EmailId from which user account need to create
+     * @param {string} password - Password for new user registration
+     */
+
     gender = chance.pick(['M', 'F']),
         this.waitForElementVisible(elements.authPage.register.submit, 10000);
 

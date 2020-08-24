@@ -8,6 +8,10 @@ let showInReport = require(router.reportMessages);
 
 exports.command = function (email) {
 
+    /**
+     * @param {string} email - the email of account for which password need to reset
+     */
+
     this.waitForElementVisible(elements.authPage.resetPassword.resetButtonLocator, 10000, showInReport.forgotPasswordForm);
     this.click(elements.authPage.resetPassword.resetButtonLocator);
     this.pause(5000);
