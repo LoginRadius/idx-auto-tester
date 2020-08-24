@@ -10,7 +10,7 @@ exports.command = function (elements, timeout, isAbort) {
             browser.waitForElementVisible(elements, timeout, isAbort);
         }
         catch (e) {
-            throw new Error('Unable to locate the element ' + elements + ' timeout ' + timeout)
+            throw new Error('Unable to locate the element ' + elements + ' timeout ' + timeout);
         }
         finally {
             done();
