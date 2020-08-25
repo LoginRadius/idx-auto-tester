@@ -4,6 +4,7 @@
 
 let router = require('../../route.js');
 let elements = require(router.locators);
+let showInReport = require(router.reportMessages);
 let Chance = require('chance');
 let chance = new Chance();
 
@@ -76,6 +77,6 @@ exports.command = function (emailId, password) {
             })
         }
     });
-    this.waitForElementVisible(elements.authPage.register.submit, 10000);
+    this.waitForElementVisible(elements.authPage.register.submit, 10000, showInReport.registerbutton);
     return this;
 };
