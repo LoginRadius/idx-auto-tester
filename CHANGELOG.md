@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.1
+- Added [Value Proposition](README.md#user-content-value-Proposition) in `README.md`
+
 ## 1.1.0
 - Added Assertions in TestCases for Reporting
 

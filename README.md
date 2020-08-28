@@ -104,4 +104,80 @@ The process of implementation or creation automation framework is defined [here]
 
 > *If you'd like to define your own reporter in addition to the built-in ones, you can follow the detailed guide [here](https://nightwatchjs.org/guide/extending-nightwatch/#custom-reporter)*
 
-Feel free to log issues. PR also welcome.
+## Value Proposition:
+What do we offer ? and how is it useful ?
+
+#### 1.  Tested Automation Scripts
+    
+With ready and tested automated scripts, you can quickly test the authentication features and workflows implemented using the LoginRadius Identity Experience Framework.
+
+It covers following features and benefits:
+
+##### Shorter execution time for Validation
+As it is an automation script covering all the positive/negative test cases, the validation of the implementation is faster.
+This will be helpful to you to create new/update test cases with different scenarios. Hence lowers administrative cost.
+
+##### Minimal Configuration needed
+It automates the entire test suite quickly with minimal configuration and is readable as well as easy to update.
+
+- Scenario-based Test cases
+Each test case is covered in a way that every scenario is captured end to end to understand the consumer’s journey right from registration, login, forget the password, profile editor etc.
+
+##### Error and Exception Handling
+Error and exceptions handling is supported for failed assertions.
+
+#### 2.  Support for Manual Test Cases
+
+Mining the test cases by reviewing code is difficult, so we have extended support to deliver the written Test Cases with the expected outcomes as well.
+
+#### 3.  Robust Framework
+
+We have used Nightwatch.js end-to-end testing framework to create the Idx-Auto-Tester tool, which comes with the following benefits:
+
+##### Robust automation framework
+The capability of multi-browser compatibility runs the tests either sequentially or in parallel, together, by group, tags, or by single, that proves to be time-efficient.
+
+##### Resolve the asynchronous queuing system problem
+We are using 'Function-style commands' of Nightwatch to create commands while running the test cases.
+
+##### Continuous Integration
+It internally uses the powerful W3C Webdriver API or the Selenium Webdriver and simplifies writing end-to-end automated tests in Node.js and effortlessly sets up for integration.
+
+##### Scalability
+The automation script is scalable enough to incorporate any additions in the feature list, so in case there are new changes or enhancements, those will be easily taken into considerations.
+
+#### 4.  Test Results and Reporting
+
+The test results can directly be read from the terminal and also stored at a specified output folder.
+
+Reports can be defined in supporting means-:
+
+-   XML report for each test file
+    
+-   Interactive HTML report
+    
+-   Also, you can define reports in addition to the built-in ones.
+    
+- Graphical Representations of HTML reports is planned to be accomplished as per [roadmap](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/).
+
+#### 5.  Easy to read Documentation
+
+With very effective documentation (readme, descriptive comments to test cases, commands) it is very easy to use by even a non-technical person.
+
+#### 6.  Open Source
+
+The tool is open for the community to contribute with the pull request process and standards defined by LoginRadius [here](https://github.com/LoginRadius/idx-auto-tester/blob/master/CONTRIBUTING.md).
+
+## Useful Links:
+
+1.  [https://www.loginradius.com/engineering/blog/opensource-Automation-for-identity-experience-framework/](https://www.loginradius.com/engineering/blog/opensource-Automation-for-identity-experience-framework/)
+    
+2.  [https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/](https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/)
+    
+3.  [https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/)
+
+## Terms Used in Doc:
+
+- We- LoginRadius idx-auto-tester
+- You- for reader who is developer and will buy our services- our customer
+- Consumer- is end user who consumes services of our customer
