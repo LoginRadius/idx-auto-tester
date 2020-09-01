@@ -176,9 +176,3 @@ The tool is open for the community to contribute with the pull request process a
 2.  [https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/](https://www.loginradius.com/engineering/blog/introduction-of-Idx-Auto-Tester/)
     
 3.  [https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/](https://www.loginradius.com/engineering/blog/roadmap-idx-autotester/)
-
-## Terms Used in Doc:
-
-- We- LoginRadius idx-auto-tester
-- You- for reader who is developer and will buy our services- our customer
-- Consumer- is end user who consumes services of our customer
