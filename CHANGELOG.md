@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0
+- Added Assertions in TestCases for Reporting
+
 ## 1.0.9
 - Added Comments for `custom-commands`
 - Updated `README.md`

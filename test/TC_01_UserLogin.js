@@ -6,6 +6,7 @@ let elements = require(router.locators);
 let config = require(router.config);
 let message = require(router.messages);
 let samplePayload = require(router.samplePayload);
+let showInReport = require(router.reportMessages);
 let uri = new require(router.uri)(config)
 let Chance = require('chance');
 let chance = new Chance();
@@ -20,10 +21,10 @@ module.exports = {
 
         browser.createUser(body, function (response) {
             browser.url(uri.iefAuthPageUri);
-            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
             browser.userLogin(response.Email[0].Value, body.Password);
-            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, "User should able to login, profile-img should locate");
-            browser.assert.urlEquals(uri.iefProfilePageUri);
+            browser.waitForElementVisible(elements.profilePage.profileImage, 20000, showInReport.loginSuccess);
+            browser.assert.urlEquals(uri.iefProfilePageUri, showInReport.profileUrl);
             browser.logout();
         });
     },
@@ -34,12 +35,12 @@ module.exports = {
         let pass = chance.word({ length: 10 })
 
         browser.url(uri.iefAuthPageUri);
-        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
         browser.userLogin(email, pass);
         browser.pause(3000);
         browser.getText(elements.commonLocators.notificationDiv, function (result) {
-            this.assert.equal(result.value, message.invalidUserMessage);
-            browser.assert.urlEquals(uri.iefAuthPageUri);
+            browser.assert.equal(result.value, message.invalidUserMessage, showInReport.loginFail);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
         });
     },
 
@@ -50,12 +51,12 @@ module.exports = {
 
         browser.createUser(body, function (response) {
             browser.url(uri.iefAuthPageUri);
-            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
             browser.userLogin(response.Email[0].Value, pass);
             browser.pause(3000);
             browser.getText(elements.commonLocators.notificationDiv, function (result) {
-                this.assert.equal(result.value, message.invalidUserPasswordMessage);
-                browser.assert.urlEquals(uri.iefAuthPageUri);
+                browser.assert.equal(result.value, message.invalidUserPasswordMessage, showInReport.loginFailOnInvalidCombination);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
             });
         });
     },
@@ -68,12 +69,12 @@ module.exports = {
 
         browser.createUser(body, function (response) {
             browser.url(uri.iefAuthPageUri);
-            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
             browser.userLogin(response.Email[0].Value, body.Password);
             browser.pause(4000);
             browser.getText(elements.commonLocators.notificationDiv, function (result) {
-                this.assert.equal(result.value, message.unverifiedUserLoginMessage);
-                browser.assert.urlEquals(uri.iefAuthPageUri);
+                browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
             });
         });
     },
@@ -82,12 +83,12 @@ module.exports = {
 
         let invalidFormattedEmail = chance.word({ length: 10 });
         browser.url(uri.iefAuthPageUri);
-        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
         browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
         browser.pause(2000);
         browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
-            this.assert.equal(result.value, message.invalidemailIdValidationMessage);
-            browser.assert.urlEquals(uri.iefAuthPageUri);
+            browser.assert.equal(result.value, message.invalidemailIdValidationMessage, showInReport.loginFailonInvalidEmail);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
         });
     },
 
