@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.4
+- Added Cases for `Passwordless login by email`
+
 ## 1.1.3
 - Updated custom commands
 
