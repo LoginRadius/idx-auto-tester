@@ -12,13 +12,17 @@ module.exports = {
     "updateProfileMessage": "Profile updated successfully.",
     "invalidUserMessage": "The user's account does not exist, please use a valid user or create the user before processing this request.",
     "invalidUserPasswordMessage": "Please use a valid user ID and password combination.",
-    "emailIdValidationMsg": "The Email Id field is required.",
-    "invalidemailIdValidationMsg": "The Email Id field must contain a valid email address.",
-    "passwordValationMsg": "The Password field must be at least",
-    "confirmpasswordValidationMsg": "The Confirm Password field must be at least ",
+    "emailIdValidationMessage": "The Email Id field is required.",
+    "invalidemailIdValidationMessage": "The Email Id field must contain a valid email address.",
+    "passwordValationMessage": "The Password field must be at least",
+    "confirmpasswordValidationMessage": "The Confirm Password field must be at least ",
     "registeredEmailMessage": 'Email address is already registered with your LoginRadius site',
     "verificationTokenMissing": "Verification token not found in query string.",
     "invalidVerificationLink": "Invalid email verification link",
     "invalidOldPassword": "Your current password is invalid, please use the correct password.",
+    "passwordlength" : "The Password field must be at least",
+    "confirmPasswordMismatch" : "The Confirm Password field does not match the Password field.",
+    "unverifiedUserLoginMessage" : "This email has not yet been verified, please click the link in your email to confirm your email address.",
+    "blankOldPasswordMessage" : "The Old Password field is required."
 
 };

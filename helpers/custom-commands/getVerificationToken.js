@@ -5,19 +5,23 @@
 let router = require('../../route.js');
 let mail7 = require(router.mail7);
 
-exports.command = function (email, cb) {
-    var self = this;
+module.exports = {
 
-    this.perform(function (self, done) {
+    command: async function (email, cb) {
+
+        /**
+         * @param {string} email - Email of account for which vtoken need to generate.
+         * @param {string} cb - callback function to handle response
+         */
+
         setTimeout(() => {
             mail7(email, function (data) {
+                console.log("its mails data: ", data);
                 cb(data);
-                done();
+                //done();
             })
-        }, 10000); // wait for email to be receive
-    });
-
-    return this;
-};
-
+        }, 10000);
+        // wait for email to be receive
+    }
+}
 
