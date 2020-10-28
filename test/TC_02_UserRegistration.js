@@ -12,10 +12,17 @@ let Chance = require('chance');
 let chance = new Chance();
 let registrationSuccess = false;
 let emailId;
+var EmailFlow;
 
 module.exports = {
     '@tags': ['registration', 'userregistration'],
 
+    before: function (browser, done) {
+        browser.appConfig(function (config) {
+            EmailFlow = config.EmailVerificationFlow;
+            done();
+        })
+    },
 
     '\n1. Verify that user should navigate to register page': function (browser, done) {
 
@@ -24,7 +31,6 @@ module.exports = {
         browser.click(elements.authPage.login.registerLink);
         browser.pause(5000);
         browser.waitForElementVisible(elements.authPage.register.submit, 10000, false, showInReport.registerPage);
-        browser.end(done);
     },
 
 
@@ -45,7 +51,6 @@ module.exports = {
         browser.click(elements.authPage.register.submit);
         browser.waitForElementVisible(elements.authPage.register.passwordValidation, 10000, false, showInReport.invalidPassword);
         browser.expect.element(elements.authPage.register.passwordValidation).text.to.contain(message.passwordlength);
-        browser.end(done);
     },
 
 
@@ -70,10 +75,9 @@ module.exports = {
         browser.click(elements.authPage.register.submit);
         browser.waitForElementVisible(elements.authPage.register.confirmpasswordValidation, 10000, false, showInReport.passwordMismatch);
         browser.expect.element(elements.authPage.register.confirmpasswordValidation).text.to.contain(message.confirmPasswordMismatch);
-        browser.end(done);
     },
 
-    '4. Verify that User should able to register': function (browser, done) {
+    '4. Verify that User should able to register with different email verification flow': function (browser, done) {
 
         let email = chance.email({
             domain: "mail7.io",
@@ -89,6 +93,7 @@ module.exports = {
         browser.pause(5000);
         browser.fillRegistrationForm(email, password);
         browser.click(elements.authPage.register.submit);
+        if(EmailFlow=="required"){
         browser.waitForElementVisible(elements.commonLocators.notificationDiv, 10000, false, showInReport.notificationMessage);
         browser.getText(elements.commonLocators.notificationDiv, function (result) {
             browser.assert.equal(result.value, message.registrationSuccess, showInReport.registerSuccess);
@@ -97,12 +102,17 @@ module.exports = {
                 emailId = email;
             }
         });
-        browser.end(done);
+    }
+    else{
+        browser.waitForElementVisible(elements.profilePage.profileImage, 20000, showInReport.loginSuccess);
+        browser.assert.urlEquals(uri.iefProfilePageUri, showInReport.profileUrl);
+        browser.logout();
+    }
     },
 
 
-    '5. Verify that user should able to verify the email': function (browser, done) {
-        if (registrationSuccess) {
+    '5. Verify that user should able to verify the email if email verification flow is required': function (browser, done) {
+        if (registrationSuccess && EmailFlow=="required") {
             browser.getVerificationToken(emailId, function (res) {
                 browser.url(uri.iefAuthPageUri + "?vtype=emailverification&vtoken=" + res.vtoken);
                 browser.pause(5000);
@@ -112,7 +122,7 @@ module.exports = {
                 });
             });
         }
-        browser.end(done);
+        else browser.assert.ok('Email Verification flow is set as Optional or Disabled.');
     },
 
     '6. Verify that user should unable to register with already registered emailId': function (browser, done) {
@@ -131,7 +141,6 @@ module.exports = {
             browser.getText(elements.commonLocators.notificationDiv, function (result) {
                 browser.assert.equal(result.value, message.registeredEmailMessage, showInReport.registerFailonRegisteredEmail);
             });
-            browser.end(done);
         }
     },
 
@@ -152,7 +161,6 @@ module.exports = {
         browser.click(elements.authPage.register.submit);
         browser.waitForElementVisible(elements.authPage.register.emailValidation, 10000, false, showInReport.registerFailonInvalidEmail);
         browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMessage);
-        browser.end(done);
     },
 
     '8. Verify that user should unable to register with blank data': function (browser, done) {
@@ -165,6 +173,9 @@ module.exports = {
         browser.expect.element(elements.authPage.register.emailValidation).text.to.contain(message.invalidemailIdValidationMessage);
         browser.expect.element(elements.authPage.register.passwordValidation).text.to.contain(message.passwordValationMessage);
         browser.expect.element(elements.authPage.register.confirmpasswordValidation).text.to.contain(message.confirmpasswordValidationMessage);
+    },
+
+    after: function (browser, done) {
         browser.end(done);
     }
 }
