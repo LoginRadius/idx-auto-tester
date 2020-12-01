@@ -32,7 +32,7 @@ module.exports = function (objOrType) {
         'EmailVerified': true,
         'PlacesLived': [{ 'Name': chance.word(), 'IsPrimary': chance.bool() }],
         'BirthDate': '12/05/1990',
-        'Gender': chance.pick(['M', 'F']),
+        'Gender': chance.pickone(['M', 'F']),
         'PhoneNumbers': [{ 'PhoneNumber': chance.phone(), 'PhoneType': chance.word() }],
         'Addresses': [{ 'Address1': chance.word(), 'Type': chance.word() }],
         'Languages': [{ 'Id': chance.hash(), 'Name': chance.word(), 'Proficiency': chance.word() }],

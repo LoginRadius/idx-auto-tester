@@ -14,6 +14,13 @@ let chance = new Chance();
 module.exports = {
     '@tags': ['login', 'userlogin'],
 
+    before: function (browser, done) {
+        browser.appConfig(function (config) {
+            EmailFlow = config.EmailVerificationFlow;
+            done();
+        })
+    },
+
 
     '1. Verify that user should able to login': function (browser, done) {
 
@@ -40,7 +47,7 @@ module.exports = {
         browser.pause(3000);
         browser.getText(elements.commonLocators.notificationDiv, function (result) {
             browser.assert.equal(result.value, message.invalidUserMessage, showInReport.loginFail);
-            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
         });
     },
 
@@ -56,12 +63,12 @@ module.exports = {
             browser.pause(3000);
             browser.getText(elements.commonLocators.notificationDiv, function (result) {
                 browser.assert.equal(result.value, message.invalidUserPasswordMessage, showInReport.loginFailOnInvalidCombination);
-                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
             });
         });
     },
 
-    "4. Verify that it should show proper errormessage when login by unverified user's email": function (browser, done) {
+    "4. Verify that it should show proper errormessage when login by unverified user's email if email verification flow is required else show profile page": function (browser, done) {
 
         let body = samplePayload({
             "EmailVerified": false
@@ -72,11 +79,16 @@ module.exports = {
             browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
             browser.userLogin(response.Email[0].Value, body.Password);
             browser.pause(4000);
+            if(EmailFlow=='required'){
             browser.getText(elements.commonLocators.notificationDiv, function (result) {
                 browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
-                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
             });
-        });
+            }
+            else {
+                browser.assert.urlEquals(uri.iefProfilePageUri, showInReport.profileUrl);
+            }
+            });
     },
 
     "5. Verify that it should validation message when pass email in invalid format": function (browser, done) {
@@ -88,7 +100,7 @@ module.exports = {
         browser.pause(2000);
         browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
             browser.assert.equal(result.value, message.invalidemailIdValidationMessage, showInReport.loginFailonInvalidEmail);
-            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.profileUrl);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
         });
     },
 

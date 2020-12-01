@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.7 
+- Updated Cases for `User Login with Required/Optional/Disabled Email Verification Flow`
+
+## 1.1.5
+- Added manual testcases for `Passwordless login by email`
+
 ## 1.1.4
 - Added Cases for `Passwordless login by email`
 
