@@ -31,7 +31,7 @@ module.exports = {
         },
         resetPassword: {
             resetPasswordLink: "body > a:nth-child(3)",
-            resetButtonLocator: "#lr-traditional-login > div.lr-link-box .lr-raas-forgot-password",
+            resetButtonLocator: "#lr-traditional-login > div .lr-raas-forgot-password",
             passwordEmailLocator: "#loginradius-forgotpassword-emailid",
             passwordButtonLocator: "#loginradius-submit-send",
             newPasswordLocator: "#loginradius-resetpassword-password",

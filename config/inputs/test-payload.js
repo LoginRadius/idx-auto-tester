@@ -21,7 +21,7 @@ module.exports = function (objOrType) {
         'Email': [{
             'Value': email, 'Type': 'Primary'
         }],
-        'Password': '12345678',
+        'Password': 'A@1' + chance.word({length: 6}),
         "UserName": chance.word({ length: 12 }),
         'Prefix': chance.prefix(),
         'FirstName': fname,

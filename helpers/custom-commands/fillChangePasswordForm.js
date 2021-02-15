@@ -13,11 +13,9 @@ exports.command = function (oldPassword, newPassword) {
      * @param {string} newPassword - new password as string
      */
 
-    this.waitForElementVisible(elements.profilePage.accountmenu, 10000, showInReport.accountMenu);
-    this.pause(1000);
-    this.click(elements.profilePage.accountmenu);
+    this.waitForElementVisible(elements.profilePage.profileImage, 20000, showInReport.profileImage);
     this.pause(2000);
-    this.click(elements.profilePage.changePassword.changePasswordLinkLocator);
+    this.click('xpath', '//*[@id="lr-edit-profile"]/div/label[2]/a');
     this.pause(5000); // wait to expand the input fields
     this.waitForElementVisible(elements.profilePage.changePassword.changePasswordDivLocator, 10000, false, showInReport.changePasswordForm);
     this.pause(1000);

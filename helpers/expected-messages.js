@@ -24,6 +24,7 @@ module.exports = {
     "confirmPasswordMismatch" : "The Confirm Password field does not match the Password field.",
     "unverifiedUserLoginMessage" : "This email has not yet been verified, please click the link in your email to confirm your email address.",
     "blankOldPasswordMessage" : "The Old Password field is required.",
-    "instantLoginLink": "Instant Link For Login has been sent to your provided email id, check email for further instruction"
+    "instantLoginLink": "Instant Link For Login has been sent to your provided email id, check email for further instruction",
+    "similarNewPassword": "Your new password is too similar to your old passwords, please try a different password."
 
 };

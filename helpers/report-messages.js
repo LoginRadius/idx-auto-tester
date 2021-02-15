@@ -7,7 +7,7 @@ module.exports = {
   loginPage: 'Login form should display successfully.',
   emailField: 'Email field should display.',
   registerbutton: 'Register button should display.',
-  profileUrl: 'Profile URL should match suceesfully.',
+  profileUrl: 'Profile URL should match sucessfully.',
   homeUrl: 'Home URL should match suceesfully.',
   loginFail: 'User should not logged-in, error message should display.',
   loginFailOnInvalidCombination : 'User should not logged-in, error message of wrong user credential combination should display.',
