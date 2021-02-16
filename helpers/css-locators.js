@@ -37,6 +37,7 @@ module.exports = {
             newPasswordLocator: "#loginradius-resetpassword-password",
             confirmPasswordLocator: "#loginradius-resetpassword-confirmpassword",
             resetPasswordButtonLocator: "#loginradius-submit-reset-password",
+            emailPhoneValidation: "#validation-loginradius-forgotpassword-emailid"
         }
 
     },
