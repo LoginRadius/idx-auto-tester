@@ -17,5 +17,8 @@ module.exports = {
     * mail7.io apiKey and apiSecret can be retrived by signinup at mail7.io as it is an open-source service
     */
     mail7ApiKey: '<mail7.io apikey>',
-    mail7ApiSecret: '<mail7.io apisecret>'
+    mail7ApiSecret: '<mail7.io apisecret>',
+    
+    // Enter valid phone number 
+    phoneNumber: '<Phone Number>'
 };
