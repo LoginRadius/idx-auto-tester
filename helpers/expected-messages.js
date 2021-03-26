@@ -7,6 +7,7 @@ module.exports = {
     "registrationSuccess": "A verification email has been sent to your provided email address, please check your email for further instructions",
     "changePasswordSuccess": "Password updated successfully.",
     "forgotPassword": "Password reset information sent to your provided email id, check email for further instruction",
+    "phoneForgotPassword": "OTP has been sent to your provided phone number.",
     "resetPasswordSuccess": "Password was reset successfully",
     "emailVerifySuccess": "Email verification complete, now you may log in",
     "updateProfileMessage": "Profile updated successfully.",
@@ -25,6 +26,8 @@ module.exports = {
     "unverifiedUserLoginMessage" : "This email has not yet been verified, please click the link in your email to confirm your email address.",
     "blankOldPasswordMessage" : "The Old Password field is required.",
     "instantLoginLink": "Instant Link For Login has been sent to your provided email id, check email for further instruction",
-    "similarNewPassword": "Your new password is too similar to your old passwords, please try a different password."
+    "similarNewPassword": "Your new password is too similar to your old passwords, please try a different password.",
+    "userNotExist": "User does not exist",
+    "emailIdPhoneValidationMessage": "The Email/Phone field is required.", 
 
 };

@@ -6,6 +6,7 @@ module.exports = {
 
     config : require('path').join(__dirname, 'config/config.js'),
     samplePayload : require('path').join(__dirname, 'config/inputs/test-payload.js'),
+    samplePhonePayload : require('path').join(__dirname, 'config/inputs/test-payload-phone.js'),
     testsDir : require('path').join(__dirname, '/test'),
     
     //helpers

@@ -34,6 +34,8 @@ module.exports = {
   accountMenu: 'Account Menu should display successfully.',
   changePasswordForm: 'Change Password form should display.',
   browserBackSuccess: 'User should not redirect to profile.aspx with clicking on browser back button.',
-  logoutSuccess: 'User should logout from application and login page should display successfully.'
+  logoutSuccess: 'User should logout from application and login page should display successfully.',
+  phoneForgotPasswordMessageSent: "Otp sent successfully",
+  userNotExist: "User does not exist"
 
 };
