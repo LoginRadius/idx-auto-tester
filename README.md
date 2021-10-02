@@ -13,7 +13,7 @@ The full-version releases that include more test coverage and major changes with
 - All notable changes can be found [here](CHANGELOG.md)
 
 ### Contribution:
-The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here].(CONTRIBUTING.md)
+The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here](CONTRIBUTING.md).
 
 
 ## Getting Started:
@@ -157,11 +157,11 @@ Reports can be defined in supporting means-:
 
   
 ### 5. Easy to read Documentation
-With very effective documentation (readme, descriptive comments to test cases, commands) it is very easy to use by even a non-technical person.
+With very effective documentation (readme, descriptive comments to test cases, commands), it is very easy to use by even a non-technical person.
  
 
 ### 6. Open Source
-The tool is open for the community to contribute with the pull request process and standards defined by LoginRadius [here](https://github.com/LoginRadius/idx-auto-tester/blob/master/CONTRIBUTING.md).
+The tool is open for the community to contribute with the pull request process and standards defined by LoginRadius. Read the contribution guidelines [here](https://github.com/LoginRadius/idx-auto-tester/blob/master/CONTRIBUTING.md).
 
 
 ## Useful Links:
