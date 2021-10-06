@@ -13,7 +13,7 @@ The full-version releases that include more test coverage and major changes with
 - All notable changes can be found [here](CHANGELOG.md)
 
 ### Contribution:
-The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here].(CONTRIBUTING.md)
+The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here](CONTRIBUTING.md)
 
 
 ## Getting Started:
