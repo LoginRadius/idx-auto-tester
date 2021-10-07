@@ -16,6 +16,7 @@ module.exports = {
     "emailIdValidationMessage": "The Email Id field is required.",
     "invalidemailIdValidationMessage": "The Email Id field must contain a valid email address.",
     "passwordValationMessage": "The Password field must be at least",
+    "passwordValidationMessage": "The Password field is required.",
     "confirmpasswordValidationMessage": "The Confirm Password field must be at least ",
     "registeredEmailMessage": 'Email address is already registered with your LoginRadius site',
     "verificationTokenMissing": "Verification token not found in query string.",
