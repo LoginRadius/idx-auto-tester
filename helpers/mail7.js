@@ -4,7 +4,7 @@ const fetch = require('node-fetch');
 
 const { URL } = require('url');
 
-const DEFAULT_HOST = 'https://api.mail7.io';
+const defaultHost = 'https://api.mail7.io';
 
 /**
  * @param {String} e: email in form of email(zyx@mail7.io or zyx), you want get data from...
@@ -14,7 +14,7 @@ module.exports = function (e, cb) {
     let domain = e.substr(e.indexOf('@'));
     e = e.indexOf('@') > -1 ? e.replace(domain, '') : e;
 
-    const fetchUrl = new URL(`${DEFAULT_HOST}/inbox`);
+    const fetchUrl = new URL(`${defaultHost}/inbox`);
 
     fetchUrl.searchParams.set('apikey', config.mail7ApiKey);
     fetchUrl.searchParams.set('apisecret', config.mail7ApiSecret);
