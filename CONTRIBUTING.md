@@ -2,12 +2,22 @@
 
 Here are some guidelines to follow while contributing to this project.
 
+## Contribution Flow
+
+- Fork the repository on GitHub.
+- Create a separate branch from `dev` branch to base your work.
+- Make commits of logical units.
+- Make sure your commit messages are in the proper format.
+- Push your changes to a topic branch in your fork of the repository.
+- Submit a pull request to the original repository.
+- Please ensure that you raise a PR on `dev` branch instead of `master`.
+
 ## Pull Request Process
 
 1.  Ensure any install or build dependencies are removed before the end of the layer when doing a build.
 2.  Update the README.md with details of changes to the interface, this includes new environment variables, useful parameters to use.
 3.  Increase the version numbers in `package.json` with every pull request. The versioning scheme we use is  [SemVer](http://semver.org/).
-4. Update the `CHANGELOG.md` following by the new version number and related changes.
+4.  Update the `CHANGELOG.md` following by the new version number and related changes.
 
 ## Our Standards
 
