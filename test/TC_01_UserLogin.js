@@ -16,7 +16,7 @@ module.exports = {
 
     before: function (browser, done) {
         browser.appConfig(function (config) {
-            EmailFlow = config.EmailVerificationFlow;
+            emailFlow = config.emailVerificationFlow;
             done();
         })
     },
