@@ -24,7 +24,7 @@ The automation scripts will be continuously improved by adding more test cases w
 - Clone this repo to your local machine 
 
 ### Configure:
-- Rename file`config\config.temp.js` by `config\config.js`
+- Rename file`config/config.temp.js` into `config/config.js`
 ```
 ├── config
 │   ├── inputs
@@ -38,21 +38,31 @@ The automation scripts will be continuously improved by adding more test cases w
 
 ![](https://lh3.googleusercontent.com/Wmi5FVepKIvITCI-ynwBjL8qBbtv0rrA1OfeMTpyPsO-_RhovEv7zVPbdAXEHHuGVYLnKMSyZmrkWv2fjbEM0SggmhO_ptEmL2XJLjPZ8NMf1gHJYZI12teQY4fc291B3M7f2rMS)
 
-- Add your apiKey, apiSecret, and siteName in `config\config.js`
+- Add your apiKey, apiSecret, and siteName in `config/config.js`
 
 
-> Don't have Loginradius App ?. Create your own [here](https://adminconsole.loginradius.com/)
+> Don't have Loginradius App? Create your own [here](https://adminconsole.loginradius.com/)
 - Add mail7 apiKey and apiSecret for disposable email addresses
 > *Mail7.io is an open-source service, mail7 apikey and secret can be retrieved by signing up at [mail7.io](https://api.mail7.io/login)*
-- Open Terminal in IDE like VS Code or Sublime Text
-- Add Project dependencies by command `npm install`
+- Open a terminal (perhaps in your IDE like VS Code or Sublime Text)
+- Add project dependencies by command `npm install`.
+- On Linux, fix the Chrome driver path in `nightwatch.json` by removing the `.exe` from it:
+  ```json
+  {
+    "selenium": {
+        "cli_args": {
+            "webdriver.chrome.driver": "node_modules/chromedriver/lib/chromedriver/chromedriver"
+        }
+    }
+  }
+  ```
 - You also can install dependencies by running command for a particular package like `npm install -g nightwatch`
 
 ### Running Tests:
 Now you are able to run scripts on your implementation of Loginradius Identity Experience.
 - Command to run all tests at once `node nightwatch.js test`
-- Command to run a single file `node nightwatch.js test\<filename>.js`
-- If you have installed Nightwatch globally (with -g option), the binary nightwatch will be available anywhere and test can be run by directly using nightwatch as a test runner `nightwatch test\<filename.js>`
+- Command to run a single file `node nightwatch.js test/<filename>.js`
+- If you have installed Nightwatch globally (with -g option), the binary nightwatch will be available anywhere and test can be run by directly using nightwatch as a test runner `nightwatch test/<filename.js>`
 - An executable Batch file is also added with named as `executable.bat` which can be run with a double-click, and written command will be executed and HTML output report will be generated.
 
 > *Nightwatch includes a command-line test runner, which makes it easy to run tests and generate useful output. Please refer to the [Installation](https://nightwatchjs.org/guide/running-tests/) section for details on how to get the runner installed. There are a few different options on how to use the test runner, depending on your installation type.*
