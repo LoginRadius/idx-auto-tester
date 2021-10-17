@@ -79,16 +79,16 @@ module.exports = {
             browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
             browser.userLogin(response.Email[0].Value, body.Password);
             browser.pause(4000);
-            if(EmailFlow=='required'){
-            browser.getText(elements.commonLocators.notificationDiv, function (result) {
-                browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
-                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
-            });
+            if (EmailFlow == 'required') {
+                browser.getText(elements.commonLocators.notificationDiv, function (result) {
+                    browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
+                    browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+                });
             }
             else {
                 browser.assert.urlEquals(uri.iefProfilePageUri, showInReport.profileUrl);
             }
-            });
+        });
     },
 
     "5. Verify that it should validation message when pass email in invalid format": function (browser, done) {
@@ -101,6 +101,41 @@ module.exports = {
         browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
             browser.assert.equal(result.value, message.invalidemailIdValidationMessage, showInReport.loginFailonInvalidEmail);
             browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+        });
+    },
+
+
+    "6. Verify that it should show proper errormessage when login by deleted user's email": function (browser, done) {
+        let body = samplePayload({
+            "EmailVerified": false
+        });
+        browser.createUser(body, function (response) {
+            // Delete user: Can't perform the case as require managerial access to delete the user
+            browser.url(uri.iefAuthPageUri);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
+            browser.userLogin(response.Email[0].Value, body.Password);
+            browser.pause(4000);
+            browser.getText(elements.commonLocators.notificationDiv, function (result) {
+                browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+            });
+        });
+    },
+
+    "7. Verify that it should show proper errormessage when login by blocked user's email": function (browser, done) {
+        let body = samplePayload({
+            "EmailVerified": false
+        });
+        browser.createUser(body, function (response) {
+            // Delete user: Can't perform the case as require managerial access to block the user
+            browser.url(uri.iefAuthPageUri);
+            browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
+            browser.userLogin(response.Email[0].Value, body.Password);
+            browser.pause(4000);
+            browser.getText(elements.commonLocators.notificationDiv, function (result) {
+                browser.assert.equal(result.value, message.unverifiedUserLoginMessage, showInReport.loginFailOnUnverifiedUser);
+                browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+            });
         });
     },
 
