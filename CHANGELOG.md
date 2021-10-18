@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.8
+- Updated Test Cases for Login functionality
+
 ## 1.1.7 
 - Updated Cases for `User Login with Required/Optional/Disabled Email Verification Flow`
 
