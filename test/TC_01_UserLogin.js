@@ -54,7 +54,7 @@ module.exports = {
     '3. Verify that proper message should show when pass valid email and Invalid Password': function (browser, done) {
 
         let body = samplePayload();
-        let pass = chance.word({ length: 10 })
+        let pass = chance.word({ length: 10 });
 
         browser.createUser(body, function (response) {
             browser.url(uri.iefAuthPageUri);
@@ -68,7 +68,50 @@ module.exports = {
         });
     },
 
-    "4. Verify that it should show proper errormessage when login by unverified user's email if email verification flow is required else show profile page": function (browser, done) {
+    "4. Verify that it should show validation message when passing email in invalid format": function (browser, done) {
+
+        let invalidFormattedEmail = chance.word({ length: 6 });
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
+        browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
+        browser.pause(2000);
+        browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
+            browser.assert.equal(result.value, message.invalidemailIdValidationMessage, showInReport.loginFailonInvalidEmail);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+        });
+    },
+
+    "5. Verify that it should show validation message when passing blank email field": function (browser, done) {
+
+        let invalidFormattedEmail = '';
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
+        browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
+        browser.pause(4000);
+        browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
+            browser.assert.equal(result.value, message.emailIdValidationMessage, showInReport.loginFailonBlankEmail);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+        });
+    },
+
+    "6. Verify that it should show validation message when passing blank password field": function (browser, done) {
+
+        let email = chance.word({ length: 10 });
+        let pass = '';
+
+        browser.url(uri.iefAuthPageUri);
+        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
+        browser.userLogin(email, pass);
+        browser.pause(4000);
+        browser.getText(elements.authPage.login.validators.passwordErrorMessage, function (result) {
+            browser.assert.equal(result.value, message.passwordValidationMessage, showInReport.loginFailonBlankPassword);
+            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
+        });
+    },
+
+    "7. Verify that it should show proper errormessage when login by unverified user's email if email verification flow is required else show profile page": function (browser, done) {
 
         let body = samplePayload({
             "EmailVerified": false
@@ -89,19 +132,6 @@ module.exports = {
                 browser.assert.urlEquals(uri.iefProfilePageUri, showInReport.profileUrl);
             }
             });
-    },
-
-    "5. Verify that it should validation message when pass email in invalid format": function (browser, done) {
-
-        let invalidFormattedEmail = chance.word({ length: 10 });
-        browser.url(uri.iefAuthPageUri);
-        browser.waitForElementVisible(elements.authPage.login.loginDiv, 20000, showInReport.loginPage);
-        browser.userLogin(invalidFormattedEmail, chance.word({ length: 10 }));
-        browser.pause(2000);
-        browser.getText(elements.authPage.login.validators.emailIdErrorMessage, function (result) {
-            browser.assert.equal(result.value, message.invalidemailIdValidationMessage, showInReport.loginFailonInvalidEmail);
-            browser.assert.urlEquals(uri.iefAuthPageUri, showInReport.homeUrl);
-        });
     },
 
     after: function (browser, done) {

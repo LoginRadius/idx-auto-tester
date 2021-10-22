@@ -13,6 +13,8 @@ module.exports = {
   loginFailOnInvalidCombination : 'User should not logged-in, error message of wrong user credential combination should display.',
   loginFailOnUnverifiedUser: 'User should not logged-in, error message of verification pending should display.',
   loginFailonInvalidEmail: 'User should not logged-in, error message of invalid email should display.',
+  loginFailonBlankEmail: 'User should not logged-in, error message of email field required should display.',
+  loginFailonBlankPassword: 'User should not logged-in, error message of password field required should display.',
   registerPage: 'Register form should display successfully.',
   invalidPassword: 'Invalid Password error message should display.',
   passwordMismatch: 'Password mismatch error message should display.',
