@@ -2,7 +2,7 @@
 # LoginRadius 'Idx-Auto-Tester' Open Source Automation
 
 ## About:
-Idx-Auto-Tester is LoginRadius Identity Experience Automation Framework, which refers to IEF Automation. It is an open-source automation framework built-in Nightwatch| Node.js tool that delivers the standard authentication cases of LoginRadius Identity Experience.
+Idx-Auto-Tester is a LoginRadius Identity Experience Automation Framework, which refers to IEF Automation. It is an open-source automation framework with a built-in Nightwatch| Node.js tool that delivers the standard authentication cases of the LoginRadius Identity Experience.
  - Automation scripts are written in the [Nightwatch](https://nightwatchjs.org/) framework. 
  - [Node.js](https://nodejs.org) Core Assertion Testing Library is used for assertions.
 
@@ -13,7 +13,7 @@ The full-version releases that include more test coverage and major changes with
 - All notable changes can be found [here](CHANGELOG.md)
 
 ### Contribution:
-The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here].(CONTRIBUTING.md)
+The `idx-auto-tester` is open for the community to contribute. Read the contribution guidelines [here](CONTRIBUTING.md)
 
 
 ## Getting Started:
