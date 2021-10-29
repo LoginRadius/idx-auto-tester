@@ -1,15 +1,15 @@
 /**
  * Cases: User Login
  */
-let router = require('../route.js');
-let elements = require(router.locators);
-let config = require(router.config);
-let message = require(router.messages);
-let samplePayload = require(router.samplePayload);
-let showInReport = require(router.reportMessages);
-let uri = new require(router.uri)(config)
-let Chance = require('chance');
-let chance = new Chance();
+const router = require('../route.js');
+const elements = require(router.locators);
+const config = require(router.config);
+const message = require(router.messages);
+const samplePayload = require(router.samplePayload);
+const showInReport = require(router.reportMessages);
+const uri = new require(router.uri)(config)
+const Chance = require('chance');
+const chance = new Chance();
 
 module.exports = {
     '@tags': ['login', 'userlogin'],
