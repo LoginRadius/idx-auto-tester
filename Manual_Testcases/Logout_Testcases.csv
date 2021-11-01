@@ -1,0 +1,19 @@
+Test case ID,Title,Steps,Test Data,Expected Outcome,,,,,,,,,,,,,,,,,,,,,
+Test Cases of Logout Feature,,,,,,,,,,,,,,,,,,,,,,,,,
+TC_1,Verify that user should successfully logout by clicking on logout button,"1. Navigate to Site URL
+2. Navigate to Login Page
+3. Enter Email Id which used in sample payload and invalid Password
+4. Click on Login button 
+5. Successful Login message comes up and redirected to profile page
+6. Click on Account Menu
+7. Click on Logout button
+8. Successful Logout message comes up and redirected to Home page
+9. Press Back Button to verify profile page doesn’t show up again",,User should be able to logout using the logout button in account menu and profile page should not show up again when pressing the back button,,,,,,,,,,,,,,,,,,,,,
+TC_2,Verify that user should successfully logout by browsing logout url,"1. Navigate to Site URL
+2. Navigate to Login Page
+3. Enter Email Id which used in sample payload and invalid Password
+4. Click on Login button 
+5. Successful Login message comes up and redirected to profile page
+6. Enter the Logout URI in browser
+7. Successful Logout message comes up and redirected to Home page
+8. Press Back Button to verify profile page doesn’t show up again",,User should be able to logout using the logout URI and profile page should not show up again when pressing the back button,,,,,,,,,,,,,,,,,,,,,

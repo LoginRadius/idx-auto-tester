@@ -1,0 +1,27 @@
+Test case ID,Title,Steps,Test Data,Expected Outcome
+Test Cases of User Login Feature,,,,
+TC_01,Verify that user is able to login with valid data,"1. Create user by account api with sample payload using loginradius-sdk 
+2. Navigate to Site URL
+3. Navigate to Login Page
+4. Enter Email Id and Password which used in sample payload
+5. Click on Login button",,User should able to login with entered data and profile page should display.
+TC_02,Verify that user is unable to login with invalid email and password combination,"1. Navigate to Site URL
+2. Navigate to Login Page
+3. Enter invalid Email Id and Password 
+4. Click on Login button",,User should not be logged-in to site and proper message should display for invalid login credential.
+TC_03,Verify that user is getting proper message on valid email and invalid password combination,"1. Create user by account api with sample payload using loginradius-sdk 
+2. Navigate to Site URL
+3. Navigate to Login Page
+4. Enter Email Id which used in sample payload and invalid Password
+5. Click on Login button",,User should not be logged-in to site and proper message should display for invalid login credential.
+TC_04,Verify that it should show proper error message when login by unverified user's email,"1. Create user by account api with sample payload using loginradius-sdk
+2. Do not verify the Email
+3. Navigate to Site URL
+4. Navigate to Login Page
+5. Enter Email Id which used in sample payload and Password
+6. Click on Login button",,"User should not be logged-in to site and proper message should display for unverified email
+An email will be sent to user inbox"
+TC_05,Verify that it should show validation message when enter invalid formatted email,"1. Navigate to Site URL
+2. Navigate to Login Page
+3. Enter Invalid Email Id (abc) and random Password
+4. Click on Login button",,A validation message should show under the email input field
