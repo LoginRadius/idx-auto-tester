@@ -1,0 +1,21 @@
+Test case ID,Title,Steps,Test Data,Expected Outcome,,,,,,,,,,,,,,,,,,,,,
+Test Cases of Profile Editor Feature,,,,,,,,,,,,,,,,,,,,,,,,,
+TC_1,Verify that user is able to update profile after logged-in,"1. Create user by account api with sample payload using loginradius-sdk 
+2. Navigate to Site URL
+3. Navigate to Login Page
+4. Enter Email Id and Password which used in sample payload
+5. Click on Login button 
+6. Check that navigated to profile page
+7. Navigate to Account Menu > Edit Profile
+8. Clear already entered data of First Name and Last Name
+9. Enter First Name and Last Name 
+10. Click on Submit button",,User should able to update profile successfully with new data.,,,,,,,,,,,,,,,,,,,,,
+TC_2,Verify that user is able to update profile with blank last name field,"1. Create user by account api with sample payload using loginradius-sdk 
+2. Navigate to Site URL
+3. Navigate to Login Page
+4. Enter Email Id and Password which used in sample payload
+5. Click on Login button 
+6. Check that navigated to profile page
+7. Navigate to Account Menu > Edit Profile
+8. Clear already entered data of Last Name
+9. Click on Submit button",,User should able to update profile successfully with blank Last Name field.,,,,,,,,,,,,,,,,,,,,,
