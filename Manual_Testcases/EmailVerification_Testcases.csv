@@ -1,8 +1,0 @@
-Test case ID,Title,Steps,Test Data,Expected Outcome,,,,,,,,,,,,,,,,,,,,,
-Test Cases of Email Verification Feature,,,,,,,,,,,,,,,,,,,,,,,,,
-TC_1,Verify that proper error message is showing when pass invalid verification token,"1. Navigate to Site URL
-2. Enter verification url with invalid token in browser tab
-",,User should receive error message of 'Invalid email verification link'.,,,,,,,,,,,,,,,,,,,,,
-TC_2,Verify that proper error message is showing when pass not pass email verification token,"1. Navigate to Site URL
-2. Enter verification url with blank token in browser tab
-",,User should receive error message of 'Verification token not found in query string.'.,,,,,,,,,,,,,,,,,,,,,
