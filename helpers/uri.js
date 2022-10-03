@@ -3,14 +3,10 @@
  */
 
 module.exports = function (config) {
-
-    let module = {};
-
-    module.iefAuthPageUri = "https://" + config.siteName + "." + config.defaultHub + "." + config.defaultHost + "/auth.aspx",
-
-    module.iefLogoutUri = "https://" + config.siteName + "." + config.defaultHub + "." + config.defaultHost + "/auth.aspx?action=logout",
-
-    module.iefProfilePageUri = "https://" + config.siteName + "." + config.defaultHub + "." + config.defaultHost + "/profile.aspx"
-
-    return module;
+    const BASE_URL = `https://${config.siteName}.${config.defaultHub}.${config.defaultHost}`;
+    return {
+        iefAuthPageUri: BASE_URL + "/auth.aspx",
+        iefLogoutUri: BASE_URL + "/auth.aspx?action=logout",
+        iefProfilePageUri: BASE_URL + "/profile.aspx"
+    };
 }
