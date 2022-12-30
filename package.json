@@ -15,7 +15,7 @@
     "assert": "2.0.0",
     "chance": "1.1.6",
     "loginradius-sdk": "^10.0.0",
-    "nightwatch": "1.3.6",
+    "nightwatch": "1.4.0",
     "nightwatch-html-reporter": "2.0.6",
     "request": "2.88.2",
     "underscore": "1.12.1"
